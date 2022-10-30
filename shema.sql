@@ -1,4 +1,5 @@
--- books
+CREATE DATABASE Catalog_of_Things;
+
 CREATE TABLE books(
     id INT GENERATED ALWAYS AS IDENTITY,
     publish_date DATE NOT NULL,
@@ -10,7 +11,7 @@ CREATE TABLE books(
     PRIMARY KEY(id),
     CONSTRAINT fk_labels FOREIGN KEY(books_id) REFERENCES labels(id)
 );
--- games
+
 CREATE TABLE games(
     id INT GENERATED ALWAYS AS IDENTITY,
     publish_date DATE NOT NULL,
@@ -21,14 +22,14 @@ CREATE TABLE games(
     PRIMARY KEY(id),
     CONSTRAINT fk_authors FOREIGN KEY(games_id) REFERENCES authors(id)
 );
--- labels
+
 CREATE TABLE labels(
     id INT GENERATED ALWAYS AS IDENTITY,
     title VARCHAR(50),
     color VARCHAR(50),
     PRIMARY KEY(id)
 );
--- authors
+
 CREATE TABLE authors(
     id INT GENERATED ALWAYS AS IDENTITY,
     first_name VARCHAR(50),

@@ -30,12 +30,18 @@ class App
     gets.chomp
   end
 
+  def run
+    load_books
+    load_games
+    load_labels
+    load_authors
+  end
+
   def options
     choose = menu
     case choose
     when '1'
       list_all_books
-      load_books
     when '2'
       list_all_games
     when '3'
